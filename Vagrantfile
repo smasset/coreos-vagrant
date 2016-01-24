@@ -10,7 +10,7 @@ CONFIG = File.join(File.dirname(__FILE__), "config.rb")
 
 # Defaults for config options defined in CONFIG
 $num_instances = 1
-$instance_name_prefix = "core"
+$instance_name_prefix = "swarm-coreos"
 $update_channel = "alpha"
 $image_version = "current"
 $enable_serial_logging = false
@@ -118,6 +118,7 @@ Vagrant.configure("2") do |config|
         vb.gui = vm_gui
         vb.memory = vm_memory
         vb.cpus = vm_cpus
+        vb.name = vm_name
       end
 
       ip = "172.17.8.#{i+100}"
